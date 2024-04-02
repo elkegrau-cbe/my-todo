@@ -175,10 +175,12 @@ li {
 
 .Mittel {
   background-color: #ffd700; /* Yellow */
+  color: white;
 }
 
 .Niedrig {
-  background-color: #52c4ee; /* Blue */
+  background-color: #52ee71; /* Green */
+  color: white;
 }
 
 button {
