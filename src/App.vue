@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <h1 align="center">Meine Aufgaben</h1>
+    <MyComponent />
+
     <header>
       <input
         v-model="newTodo.text"
@@ -51,8 +52,13 @@
 </template>
 
 <script>
+import MyComponent from "./components/MyComponent.vue";
+
 export default {
   name: "App",
+  components: {
+    MyComponent,
+  },
   data() {
     return {
       newTodo: {
@@ -140,7 +146,7 @@ select {
 
 main ul {
   list-style-type: none;
-  padding: 0;
+  padding-top: 30px;
 }
 
 li {
@@ -179,11 +185,12 @@ button {
   background-color: #52c4ee; /* Blue */
   border: none;
   color: white;
-  padding: 10px 24px;
+  padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: bold;
   margin-left: 10px;
   cursor: pointer;
   border-radius: 5px;
