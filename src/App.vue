@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MyComponent />
+    <MyHeader />
 
     <header>
       <input
@@ -9,6 +9,7 @@
         placeholder="Neue Aufgabe..."
       />
       <select v-model="newTodo.priority">
+        <option value="Priorität">Priorität</option>
         <option value="Hoch">Hoch</option>
         <option value="Mittel">Mittel</option>
         <option value="Niedrig">Niedrig</option>
@@ -52,18 +53,18 @@
 </template>
 
 <script>
-import MyComponent from "./components/MyComponent.vue";
+import MyHeader from "./components/MyHeader.vue";
 
 export default {
   name: "App",
   components: {
-    MyComponent,
+    MyHeader,
   },
   data() {
     return {
       newTodo: {
         text: "",
-        priority: "Hoch",
+        priority: "Priorität",
         completed: false,
       },
       todos: [],
@@ -84,7 +85,7 @@ export default {
       if (this.newTodo.text.trim() !== "") {
         this.todos.push({ ...this.newTodo });
         this.newTodo.text = "";
-        this.newTodo.priority = "Hoch";
+        this.newTodo.priority = "Priorität";
       }
     },
     removeTodo(index) {
@@ -116,6 +117,7 @@ export default {
   max-width: 650px;
   margin: 0 auto;
   padding: 20px;
+  border-radius: 5px;
 }
 
 header {
